@@ -48,10 +48,14 @@ for el in name:
 
 print(name_hash)
 sal = 0
+sal_list = []
 for elem in name_hash:
     for a in hashed_sal:
         if elem[1] == a[0]:
-            #print("Sucess! " + str(a[1]) + str(elem[0]))
             sal = sal + int(a[1])
-    print(str(elem[0]) + str(sal))
+    sal_val = [elem[0], sal]
+    sal_list.append(sal_val)
     sal = 0
+
+for ele in sal_list:
+    print(str(ele[0]) + " " + str(ele[1]))
