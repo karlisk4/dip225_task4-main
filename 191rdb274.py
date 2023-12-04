@@ -5,9 +5,10 @@ from selenium.webdriver.common.by import By
 import time
 from openpyxl import Workbook, load_workbook 
 
+empl_name = input()
 service = Service()
 option = webdriver.ChromeOptions()
-driver = webdriver.Chrome(service=service, options=option)
+driver = webdriver.Chrome(options=option)
 
 name=[]
 # program read information from people.csv file and put all data in name list.
@@ -46,7 +47,6 @@ for el in name:
     temp_merge = [full_name, temp]
     name_hash.append(temp_merge)
 
-print(name_hash)
 sal = 0
 sal_list = []
 for elem in name_hash:
@@ -58,4 +58,5 @@ for elem in name_hash:
     sal = 0
 
 for ele in sal_list:
-    print(str(ele[0]) + " " + str(ele[1]))
+    if ele[0] == empl_name:
+        print(str(ele[0]) + " " + str(ele[1]))
