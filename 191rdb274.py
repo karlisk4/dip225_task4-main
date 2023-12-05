@@ -11,7 +11,6 @@ option = webdriver.ChromeOptions()
 driver = webdriver.Chrome(options=option)
 
 name=[]
-# program read information from people.csv file and put all data in name list.
 with open("people.csv", "r") as file:
     next(file)
     for line in file:
@@ -23,7 +22,6 @@ url = "https://emn178.github.io/online-tools/crc32.html"
 driver.get(url)
 time.sleep(1)
 
-
 wb=load_workbook('salary.xlsx')
 ws=wb.active
 hashed_sal=[]
@@ -34,7 +32,6 @@ for row in range(2,rows):
     if hash:
         hashed = [hash, salary]
         hashed_sal.append(hashed)
-
 
 name_hash = []
 for el in name:
